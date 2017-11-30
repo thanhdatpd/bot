@@ -1,7 +1,7 @@
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
-    morgan  = require('morgan');
+/* morgan  = require('morgan');
     
 Object.assign=require('object-assign')
 
@@ -56,3 +56,21 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
+*/
+
+
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
+
+var server = app.listen(8081, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log("Ung dung Node.js dang lang nghe tai dia chi: http://%s:%s", host, port)
+
+})
